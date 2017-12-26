@@ -7,3 +7,20 @@ body {
 img {
   width: inherit;
 }
+
+.navbar {
+  background-color: maroon;
+  color: white;
+}
+
+.card {
+  margin-top: 5%;
+}
+
+form {
+  margin-top: 5%;
+}
+
+ul {
+  padding: 0;
+}

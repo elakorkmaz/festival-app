@@ -47,39 +47,54 @@ class App extends React.Component {
       return <div>Loading...</div>;
     } else {
       var value = this.state.value.trim().toLowerCase();
-
       if(value.length > 0){
       festivals = festivals.filter(function(l){
             return l.details.en.title.toLowerCase().match( value );
         });
       }
       return (
-        <div>
-          <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Type here" />
-          <ul>
-            { festivals.map((festival) =>
-              <div className="card card-outline-danger">
-                <div className="row">
-                  <div className="col-6">
-                    <div className="card-block">
-                      <h4 className="card-title">
-                        {festival.details.en.title}
-                      </h4>
-                      <p className="card-text">
-                        {festival.details.en.shortdescription}
-                      </p>
-                    </div>
-                    <div className="card-block">
-                      <a href={festival.urls[0]} className="btn btn-outline-danger"> {festival.urls[0]}</a>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <img className="card-img-top" src= { festival.media[0].url} alt={festival.title}/>
-                  </div>
+        <div class="container">
+          <div className="row justify-content-center">
+            <div className="col-6 ">
+              <form>
+                <div class="form-group">
+                  <label for="search">Find a festival</label>
+                  <input type="text" class="form-control" value={this.state.value} onChange={this.handleChange} placeholder="Festival title" />
                 </div>
-              </div>
-            )}
-          </ul>
+              </form>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <ul>
+                { festivals.map((festival) =>
+                  <div className="card card-outline-danger">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="card-block">
+                          <h4 className="card-title">
+                            {festival.details.en.title}
+                          </h4>
+                          <p className="card-text">
+                            {festival.details.en.shortdescription}
+                          </p>
+                          <p className="card-text">
+                            {festival.dates.singles}
+                          </p>
+                        </div>
+                        <div className="card-block">
+                          <a href={festival.urls[0]} className="btn btn-outline-danger"> Link to website </a>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <img className="card-img-top" src= { festival.media[0].url} alt={festival.title}/>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </ul>
+            </div>
+          </div>
         </div>
       )
     }
