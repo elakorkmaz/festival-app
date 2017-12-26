@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {value: '',
@@ -53,13 +53,13 @@ class App extends React.Component {
         });
       }
       return (
-        <div class="container">
+        <div className="container">
           <div className="row justify-content-center">
             <div className="col-6 ">
               <form>
-                <div class="form-group">
-                  <label for="search">Find a festival:</label>
-                  <input type="text" class="form-control" value={this.state.value} onChange={this.handleChange} placeholder="Festival title" />
+                <div className="form-group">
+                  <label htmlFor="search">Find a festival:</label>
+                  <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} placeholder="Festival title" />
                 </div>
               </form>
             </div>
@@ -102,46 +102,6 @@ class App extends React.Component {
       )
     }
   }
-
-  //     var value = this.state.value.trim().toLowerCase();
-  //
-  //     if(value.length > 0){
-  //
-  //       // We are searching. Filter the results.
-  //     festivals = festivals.filter(function(l){
-  //           return l.details.en.title.toLowerCase().match( value );
-  //       });
-  //     }
-  //     return (
-  //       <div>
-  //         <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Type here" />
-  //         <ul>
-  //           { festivals.map((festival) =>
-  //             <div className="card card-outline-danger">
-  //               <div className="row">
-  //                 <div className="col-6">
-  //                   <div className="card-block">
-  //                     <h4 className="card-title">
-  //                       {festival.details.en.title}
-  //                     </h4>
-  //                     <p className="card-text">
-  //                       {festival.details.en.shortdescription}
-  //                     </p>
-  //                   </div>
-  //                   <div className="card-block">
-  //                     <a href={festival.urls[0]} className="btn btn-outline-danger"> {festival.urls[0]}</a>
-  //                   </div>
-  //                 </div>
-  //                 <div className="col-6">
-  //                   <img className="card-img-top" src= { festival.media[0].url} alt={festival.title}/>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           ) }
-  //         </ul>
-  //       </div>
-  //     )
-  // }
 }
 
 export default App;
