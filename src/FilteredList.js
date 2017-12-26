@@ -58,7 +58,7 @@ class App extends React.Component {
             <div className="col-6 ">
               <form>
                 <div class="form-group">
-                  <label for="search">Find a festival</label>
+                  <label for="search">Find a festival:</label>
                   <input type="text" class="form-control" value={this.state.value} onChange={this.handleChange} placeholder="Festival title" />
                 </div>
               </form>
@@ -78,6 +78,9 @@ class App extends React.Component {
                           <p className="card-text">
                             {festival.details.en.shortdescription}
                           </p>
+                          <h5 className="card-title">
+                          Date(s):
+                          </h5>
                           <p className="card-text">
                             {festival.dates.singles}
                           </p>
