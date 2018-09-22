@@ -65,19 +65,25 @@ class App extends Component {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-md-6">
+            <div className="col-md-12">
               <ul>
                 {festivals.map((festival) =>
                   <div className="card card-outline-danger">
-                    <img className="card-img-top img-fluid" src= {festival.media[0].url} alt={festival.title}/>
-                    <div className="card-body">
-                      <h4 className="card-title">{festival.details.en.title}</h4>
-                      <p className="card-text">{festival.details.en.shortdescription}</p>
-                      <h5 className="card-title">Date(s):</h5>
-                      <p className="card-text">
-                        {festival.details.en.calendarsummary}
-                      </p>
-                      <h4 className="card-title"><a href={festival.urls[0]} className="btn btn-outline-danger"> Link to website </a></h4>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="card-body">
+                          <h4 className="card-title">{festival.details.en.title}</h4>
+                          <p className="card-text">{festival.details.en.shortdescription}</p>
+                          <h5 className="card-title">Dates:</h5>
+                          <p className="card-text">
+                            {festival.details.en.calendarsummary}
+                          </p>
+                          <h4 className="card-title"><a href={festival.urls[0]} className="btn btn-outline-danger"> Link to website </a></h4>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <img className="card-img-top img-fluid" src= {festival.media[0].url} alt={festival.title}/>
+                      </div>
                     </div>
                   </div>
                 )}
