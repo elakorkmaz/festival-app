@@ -75,9 +75,7 @@ class App extends Component {
                       <p className="card-text">{festival.details.en.shortdescription}</p>
                       <h5 className="card-title">Date(s):</h5>
                       <p className="card-text">
-                        <li key={festival.dates.singles}>
-                          {festival.dates.singlesnk}
-                        </li>
+                        {festival.details.en.calendarsummary}
                       </p>
                       <h4 className="card-title"><a href={festival.urls[0]} className="btn btn-outline-danger"> Link to website </a></h4>
                     </div>
